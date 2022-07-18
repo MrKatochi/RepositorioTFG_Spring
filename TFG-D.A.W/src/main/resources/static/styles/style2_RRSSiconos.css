@@ -1,0 +1,64 @@
+/*----Iconos Redes Sociales----*/
+
+.icon {
+    width: 25px;
+    height: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 26px;
+    color: rgb(73, 73, 73);
+    border-radius: 50%;
+    outline: 2px solid rgb(70, 69, 69);
+    margin: 1px;
+    transition-property:outline-offset, outline-color, background-color ;
+    transition-duration: .25s ;
+}
+
+.icon:hover {
+    outline-offset: 4px;
+}
+
+.icon:hover i {
+    animation: shake .25s;
+}
+
+.icon--gmail:hover {
+    background-color: rgb(219, 68, 55);
+    outline-color:rgb(219, 68, 55);
+   box-shadow:0 0 5px rgb(244, 180, 0), 0 0 10px rgb(255, 0, 0), 0 0 15px rgb(15, 157, 88), 0 0 20px rgb(15, 157, 88), 0 0 30px rgb(66, 133, 244), 0 0 40px rgb(66, 133, 244), 0 0 55px rgb(219, 68, 55), 0 0 75px rgb(219, 68, 55);
+}
+
+.icon--instagram:hover {
+    background-image: 
+    radial-gradient(circle at 30% 107%, #fdf297 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    outline-color: #a02d76;
+    box-shadow:0 0 5px #fdf297, 0 0 10px #fdf297, 0 0 15px #fdf297, 0 0 20px #fd5949, 0 0 30px #fd5949, 0 0 40px #d6249f, 0 0 55px #285AEB, 0 0 75px #285AEB;
+}
+
+.icon--twitter:hover {
+    background-color: #1da1f2;
+    outline-color:#1da1f2;
+    box-shadow:0 0 5px #fdf297, 0 0 10px #fdf297, 0 0 15px #fdf297, 0 0 20px #1da1f2, 0 0 30px #1da1f2, 0 0 40px #1da1f2, 0 0 55px #1da1f2, 0 0 75px #1da1f2;
+}
+
+.icon--linkedin:hover {
+    background-color: #0077b5;
+    outline-color:  #0077b5;
+    box-shadow:0 0 5px #fdf297, 0 0 10px #fdf297, 0 0 15px #fdf297, 0 0 20px #0077b5, 0 0 30px #0077b5, 0 0 40px #0077b5, 0 0 55px #0077b5, 0 0 75px #0077b5;
+}
+
+.icon--github:hover {
+    background-color: #2ea44f;
+    outline-color: #2ea44f;
+    box-shadow:0 0 5px #fdf297, 0 0 10px #fdf297, 0 0 15px #fdf297, 0 0 20px #2ea44f, 0 0 30px #2ea44f, 0 0 40px #2ea44f, 0 0 55px #2ea44f, 0 0 75px #2ea44f;
+}
+
+@keyframes shake {
+    10% {transform: rotate(15deg);}
+    20% {transform: rotate(-15deg);}
+    30% {transform: rotate(15deg);}
+    40% {transform: rotate(-15deg);}
+}
+

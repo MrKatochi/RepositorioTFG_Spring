@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Partituras</title>
+	<div th:replace="plantillas/base :: in_head"></div>
+</head>
+
+<body>
+	<nav th:replace="plantillas/base :: nav"></nav>
+	<h1>Listado de Partituras</h1>
+
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<a class="btn btn-primary" th:href="@{/partitura/new/}" role="button">Añadir</a>
+			</div>
+			<div class="col table-responsive">
+				<table class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<th scope="col">Id</th>
+							<th scope="col">Nombre</th>
+							<th scope="col">Instrumento</th>
+							<th scope="col">Obra</th>
+							<th scope="col">Opciones</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="partitura : ${listapartitura}">
+							<td th:text="${partitura.id}">ID</td>
+							<td th:text="${partitura.nombre}">Nombre</td>
+							<td th:text="${partitura.instrumento}">Instrumento</td>
+							<td th:text="${partitura.obra}">Obra</td>
+							
+
+							<td>
+								<a class="btn btn-success" th:href="@{/partitura/view/__${partitura.id}__}"
+									role="button">Ver</a>
+								<a class="btn btn-info" th:href="@{/partitura/edit/__${partitura.id}__}"
+									role="button">Cambia</a>
+								<a class="btn btn-danger" th:href="@{/partitura/delete/__${partitura.id}__}"
+									role="button">Borra</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+
+
+		
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+		<footer th:replace="plantillas/base :: footer"></footer>
+</html>

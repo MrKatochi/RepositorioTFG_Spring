@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Obras</title>
+	<div th:replace="plantillas/base :: in_head"></div>
+</head>
+
+<body>
+	<nav th:replace="plantillas/base :: nav"></nav>
+	<h1>Listado de Obras</h1>
+
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<a class="btn btn-primary" th:href="@{/obra/new/}" role="button">Añadir</a>
+			</div>
+			<div class="col table-responsive">
+				<table class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<th scope="col">Id</th>
+							<th scope="col">Nombre</th>
+							<th scope="col">Compositor</th> <!--Arreglar-->
+							<th scope="col">Imagen</th>
+							<th scope="col">Descripción</th>
+							<th scope="col">Audio</th>
+							
+							<th scope="col">Opciones</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="obra : ${listaobra}">
+							<td th:text="${obra.id}">ID</td>
+							<td th:text="${obra.nombre}">Nombre</td>
+							<td th:text="${obra.compositor}">Compositor</td>
+							<td th:text="${obra.imagen}">Imagen</td>
+							<td th:text="${obra.descripcion}">Descripción</td>
+							<td th:text="${obra.audio}">Audio</td>
+							
+							
+
+							<td>
+								<a class="btn btn-success" th:href="@{/obra/view/__${obra.id}__}"
+									role="button">Ver</a>
+								<a class="btn btn-info" th:href="@{/obra/edit/__${obra.id}__}"
+									role="button">Cambia</a>
+								<a class="btn btn-danger" th:href="@{/obra/delete/__${obra.id}__}"
+									role="button">Borra</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+
+
+		
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+		<footer th:replace="plantillas/base :: footer"></footer>
+</html>

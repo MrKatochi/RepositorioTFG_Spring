@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Instrumentos</title>
+	<div th:replace="plantillas/base :: in_head"></div>
+</head>
+
+<body>
+	<nav th:replace="plantillas/base :: nav"></nav>
+
+	<h1>Listado de instrumentos</h1>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-2">
+				<a class="btn btn-primary" th:href="@{/instrumento/new}" role="button">Añadir</a>
+				<table class="table table-bordered table-hover">
+					<thead>
+						<tr>
+							<th scope="col">Id</th>
+							<th scope="col">Nombre</th>
+							<th scope="col">Imagen</th>
+							<th scope="col">Tipo</th>
+							<th scope="col">Opciones</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="instrumento : ${listaInstrumento}">
+							<td th:text="${instrumento.id}">ID</td>
+							<td th:text="${instrumento.nombre}">----</td>
+							<td>
+								<img src=""
+									th:src="${instrumento.imagen}"
+									width="64px"/>
+							</td>
+							<td th:text="${instrumento.tipo}">----</td>
+							<td>
+								<a class="btn btn-info" th:href="@{/instrumento/edit/__${instrumento.id}__}"
+									role="button">Cambia</a>
+								<a class="btn btn-danger" th:href="@{/instrumento/delete/__${instrumento.id}__}"
+									role="button">Borra</a>
+							</td>
+						</tr>
+
+
+				</table>
+				</tbody>
+				</table>
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<!--<footer th:replace="plantillas/base :: footer"></footer>-->
+</body>
+
+</html>

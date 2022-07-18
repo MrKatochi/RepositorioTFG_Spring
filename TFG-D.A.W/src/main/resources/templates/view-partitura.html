@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Partituras</title>
+	<div th:replace="plantillas/base :: in_head"></div>
+</head>
+
+<body>
+	<nav th:replace="plantillas/base :: nav"></nav>
+	<h1>Partitura: </h1>
+
+
+
+	<div>
+		<iframe th:src="${partitura.archivo}" >ver pdf</iframe>
+	</div>
+	
+		<div>
+		<a href="/pdf/p.pdf" >ver pdf</a>
+	</div>
+
+
+
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+<footer th:replace="plantillas/base :: footer"></footer>
+
+</html>

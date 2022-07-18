@@ -1,0 +1,114 @@
+/*Barra de navegación*/
+.img{
+	height:20px;
+	
+}
+
+/* Para base.html*/
+
+h1{
+	text-align: center;
+    color: #000;
+    background: #fff;
+    mix-blend-mode: multiply;
+    position: relative;
+    text-shadow: 7px 7px 5px rgb(192, 192, 192);
+}
+
+
+
+h1::before{
+	content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgb(0, 128, 255), rgb(0, 0, 128));
+    
+    mix-blend-mode: screen;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+body{
+	background-image: url("../img/fondos/3.jpg")
+}
+
+
+.cuerpo_inicio{
+	
+	padding-left:10%;
+	padding-right:10%;
+}
+
+/*table*/
+table {
+	background-color:rgb(244, 251, 251);
+}
+
+th {
+	background-color:darkcyan;
+}
+
+
+/*Scroll-bar*/
+::-webkit-scrollbar {
+    background:none;
+    overflow:-moz-hidden-unscrollable;
+}
+
+::-webkit-scrollbar-thumb {
+	}
+
+
+/*footer*/
+footer{
+	position:fixed;
+	bottom: 0;
+	width: 100%;
+	height: 65px;
+	
+	background: rgb(192, 192, 192);
+	border-top: 1px solid rgb(0, 0, 0);
+}
+
+footer #columnas{
+   column-count:3;
+   column-gap:40px;
+   column-rule:1px dotted gray;
+   list-style: none;
+}
+
+footer img{
+	width:40px;
+}
+
+/* Para animated_pokeball.html*/
+
+.pokeball__button {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 4px solid #7f8c8d;
+    border-radius: 50%;
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
+    box-shadow: 0 0 0 7px black;
+    background: #fff;
+    z-index: 10;
+    animation: blink .5s alternate infinite;
+    animation-play-state: paused;
+  }
+
+  .pokeball:hover .pokeball__button{
+      animation-play-state: running;
+  }
+
+  @keyframes blink {
+    from { background: #eee;}
+    to { background: #e74c3c; }
+  }
+  
+/*arreglos varios*/
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Formulario Obra</title>
+	<div th:replace="plantillas/base :: in_head"></div>
+</head>
+
+<body>
+	<nav th:replace="plantillas/base :: nav"></nav>
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-offset-2 col-md-8">
+				<form method="post" action="#" enctype="multipart/form-data"
+					th:action="${obraForm.id != 0} ? @{/obra/edit/submit} : @{/obra/new/submit}"
+					th:object="${obraForm}">
+
+					<h1 th:text="${obraForm.id != 0} ? 'Editar obra' : 'Nuevo obra'">Nuevo obra</h1>
+
+					<div class="form-group" th:classappend="${#fields.hasErrors('id')} ? 'has-error'">
+						<label for="id">ID</label>
+						<input type="text" class="form-control" id="id" placeholder="1" th:field="*{id}"
+							th:attrappend="readonly=${obraForm.id != 0} ? 'readonly' : null">
+						<span th:if="${#fields.hasErrors('id')}" th:errors="*{id}" class="help-block"
+							id="id-error">Errores</span>
+					</div>
+
+					<div class="form-group">
+						<label for="nombre">Nombre</label>
+						<input type="text" class="form-control" id="nombre" placeholder="Nombre" th:field="*{nombre}" />
+					</div>
+
+					<div class="form-group">
+						<label for="file">Audio <span th:text="${obraForm.audio}"></span></label>
+						<input id="filebutton" name="file" class="form-control input-file" type="file">
+					</div>
+					
+					<div class="form-group">
+						<label for="nombre">Compositor</label>
+						<input type="text" class="form-control" id="compositor" placeholder="Compositor" th:field="*{compositor}" />
+					</div>
+					<div class="form-group">
+						<label for="nombre">Descripción</label>
+						<input type="text" class="form-control" id="descripcion" placeholder="Descripción" th:field="*{descripcion}" />
+					</div>
+
+					<button type="submit" class="btn btn-default">Enviar</button>
+				</form>
+			</div>
+		</div>
+
+
+	</div>
+	<!-- /.container -->
+	<footer th:replace="plantillas/base :: footer"></footer>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>
